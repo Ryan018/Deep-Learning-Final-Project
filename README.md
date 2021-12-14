@@ -22,7 +22,8 @@ We were inspired from the work in homework 2 using RNNs to train our model on a 
 - what is your approach/solution/what did you do?
 
 To meet our problem statement we wanted to use data that contained both successful and unsuccessful Reddit posts which meant that taking data from r/all or r/popular would not work as those contain only the popular/hot posts at the time. We instead opted to pull data from the prior default subreddits which would then contain both sucessfull and unsuccesful posts. Although default subreddits are no longer a Reddit feature currently, the most previous defauls were 
-<ul>  <li>AskReddit</li>
+<ul class="columns" data-columns="4">  
+      <li>AskReddit</li>
       <li>announcements</li>
       <li>funny</li>
       <li>pics</li>
