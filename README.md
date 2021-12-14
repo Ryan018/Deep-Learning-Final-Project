@@ -29,59 +29,61 @@ To meet our problem statement we wanted to use data that contained both successf
     <td>announcements</td>
     <td>funny</td>
     <td>pics</td>
+    <td>todayilearned</td>
+    <td>science</td>
+    <td>IAmA</td>
+    <td>blog</td>
+    <td>videos</td>
+    <td>worldnews</td>
+  </tr>
+  <tr>
+    <li>gaming</li>
+    <li>movies</li>
+    <li>Music</li>
+    <li>aww</li>
+    <li>news</li>
+    <li>gifs</li>
+    <li>askscience</li>
+    <li>explainlikeimfive</li>
+    <li>EarthPorn</li>
+    <li>books</li>
+  </tr>
+    <tr>  
+    <td>television</td>
+    <td>tdfeProTips</td>
+    <td>sports</td>
+    <td>DIY</td>
+    <td>Showerthoughts</td>
+    <td>space"</td>
+    <td>Jokes</td>
+    <td>tifu</td>
+    <td>"food</td>
+    <td>photoshopbattles</td>
+  </tr>
+  <tr>
+    <td>Art</td>
+    <td>InternetIsBeautiful</td>
+    <td>mildlyinteresting</td>
+    <td>GetMotivated</td>
+    <td>history</td>
+    <td>nottheonion</td>
+    <td>gadgets</td>
+    <td>dataisbeautiful</td>
+    <td>Futurology</td>
+    <td>Documentaries</td>
+    <td>tdstentothis</td>
+  </tr>
+  <tr>
+    <td>personalfinance</td>
+    <td>philosophy</td>
+    <td>nosleep</td>
+    <td>creepy</td>
+    <td>OldSchoolCool</td>
+    <td>UptdftingNews</td>
+    <td>WritingPrompts</td>
+    <td>TwoXChromosomes</td>
   </tr>
 </table>
-
-<ul>  
-  <li>AskReddit</li>
-  <li>announcements</li>
-  <li>funny</li>
-  <li>pics</li>
-  <li>todayilearned</li>
-  <li>science</li>
-  <li>IAmA</li><li>blog</li>
-  <li>videos</li>
-  <li>worldnews</li>
-  <li>gaming</li>
-  <li>movies</li>
-  <li>Music</li>
-  <li>aww</li>
-  <li>news</li>
-  <li>gifs</li>
-  <li>askscience</li>
-  <li>explainlikeimfive</li>
-  <li>EarthPorn</li>
-  <li>books</li>
-  <li>television</li>
-  <li>LifeProTips</li>
-  <li>sports</li>
-  <li>DIY</li>
-  <li>Showerthoughts</li>
-  <li>space"</li>
-  <li>Jokes</li>
-  <li>tifu</li>
-  <li>"food</li>
-  <li>photoshopbattles</li>
-  <li>Art</li>
-  <li>InternetIsBeautiful</li>
-  <li>mildlyinteresting</li>
-  <li>GetMotivated</li>
-  <li>history</li>
-  <li>nottheonion</li>
-  <li>gadgets</li>
-  <li>dataisbeautiful</li>
-  <li>Futurology</li>
-  <li>Documentaries</li>
-  <li>listentothis</li>
-  <li>personalfinance</li>
-  <li>philosophy</li>
-  <li>nosleep</li>
-  <li>creepy</li>
-  <li>OldSchoolCool</li>
-  <li>UpliftingNews</li>
-  <li>WritingPrompts</li>
-  <li>TwoXChromosomes</li>
-</ul>
 
 Using the Reddit PushShift archive, we downloaded data from the previous year across these default subreddits with posts of score (karma) greater than 10. This was to filter out spam posts yet keep ones that did poorly for purpose of training. This data however was not complete and was missing many posts upon closer inspection due to PushShift's API being partially down however, we still were able to download 173,627 posts with only 2 posts containing null data that were then filtered out. From the post metadata we decided to filter out only the title text, score (karma), subreddit, and post time to obtain the most relevant features for our question and reduce the file size dramatically. 
 
