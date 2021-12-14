@@ -31,6 +31,7 @@ To meet our problem statement we wanted to use data that contained both successf
       <td>pics</td>
       <td>todayilearned</td>
       <td>science</td>
+      <td>TwoXChromosomes</td>
     </tr>
       <td>IAmA</td>
       <td>blog</td>
@@ -84,9 +85,6 @@ To meet our problem statement we wanted to use data that contained both successf
       <td>OldSchoolCool</td>
       <td>UptdftingNews</td>
       <td>WritingPrompts</td>
-    </tr>
-    <tr>
-      <td>TwoXChromosomes</td>
     </tr>
   </table>
 
