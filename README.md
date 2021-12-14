@@ -6,9 +6,9 @@ Ryan Whitaker, Tadeusz Pforte
 # Abstract
 - in a paragraph or two, summarize the project
 
-We are trying to see if we can train a model to predict if a Reddit post will be successful (ie. have a large karma score) by training our model on the title text, subreddit, time posted, and karma of posts across the prior "default" subreddits. In order to do so we wanted a binary classifier to assign a label of successful or unsuccessful to text titles. Using a pre-trained NLP model with a fully connected layer, we trained the network on a dataset of Reddit posts from default subreddit communities from the past year obtained via Reddit PushShift.
+We are trying to see if we can train a model to predict if a Reddit post will be successful (ie. have a large karma score) by training our model on the title text and karma of posts across the prior "default" subreddits. In order to do so we wanted a binary classifier to assign a label of successful or unsuccessful to text titles. Using a pre-trained NLP model with a fully connected layer for binary classification, we trained the network on a dataset of Reddit posts from default subreddit communities from 2020 obtained via Reddit PushShift.
 
-<Model Resultas>
+We found our original idea of predicting a karma score for given Reddit posts was too challenging/ambitious and our data was hard to train on given the variable nature of Reddit posts across several subreddits. We refined our question to allow for a binary classification problem in which our model was able to trainn to 88% accuracy which is significant for the limitations of the data. Our data was also very large and the model took a long time to train so to speed up the process we used a buffer such that we were only using <20% of the total post data (x thousand posts).
 
 # Problem statement 
 - what are you trying to solve/do
@@ -18,7 +18,7 @@ We are trying to see if we can train a model to predict if a Reddit post will be
 # Related work 
 - what papers/ideas inspired you, what datasets did you use, etc
 
-We were inspired from the work in homework 2 using RNNs to train our model on a corpus and generate text. We wanted to see if it would be possible to analyze Reddit posts rather than a standard corpus as well as apply some form of linear/binary predictor. We used the Reddit PushShift archive which contains an archive of all Reddit posts in order to bypass the Reddit API restrictions for collecting large datasets. We used Google's pre-trained BERT model which is a masked language model using next sentence prediction in order to have an english language basis for analyzing post text. 
+We were inspired from the work in homework 2 using RNNs to train our model on a corpus and generate text. We wanted to see if it would be possible to analyze Reddit posts rather than a standard corpus as well as apply some form of linear/binary predictor. We used the Reddit PushShift archive which contains an archive of all Reddit posts in order to bypass the Reddit API restrictions for collecting large datasets. We used Google's pre-trained BERT model which is a masked language model using next sentence prediction in order to have an english language basis for further training on post text. 
 
 # Methodology 
 - what is your approach/solution/what did you do?
@@ -90,24 +90,28 @@ To meet our problem statement we wanted to use data that contained both successf
     </tr>
   </table>
 
-Using the Reddit PushShift archive, we downloaded data from the previous year across these default subreddits with posts of score (karma) greater than 10. This was to filter out spam posts yet keep ones that did poorly for purpose of training. This data however was not complete and was missing many posts upon closer inspection due to PushShift's API being partially down however, we still were able to download 173,627 posts with only 2 posts containing null data that were then filtered out. From the post metadata we decided to filter out only the title text, score (karma), subreddit, and post time to obtain the most relevant features for our question and reduce the file size dramatically. 
+Using the Reddit PushShift archive, we downloaded data from 2020 across these default subreddits with posts of score (karma) greater than 10. This was to filter out spam posts yet keep ones that did poorly for purpose of training. This data however was not complete and was missing many posts upon closer inspection due to PushShift's API being partially down however, we still were able to download 280,509 posts with only 2 posts containing null data that were then filtered out. From the post metadata we decided to filter out only the title text, score (karma), subreddit, and post time to obtain the most relevant features for our question and reduce the file size dramatically. Additionally, we introduced a buffer to reduce the total number of posts to that we were training on ~20% as our dataset was very large and took a long time to train, time which we did not have freely available for testing and further iteration. 
 
 Originally we wanted to create a model that was able to predict an exact karma score for a given Reddit post as a regression task however, this proved to be extremely innacurate upon first attempts and our problem statement seemed suited better for a classification task of assigning a successfull/unsuccessful label. 
 
-
 Network Architecture: 
 
-We used Google's pre-trained BERT NLP model and applied a fully connected layer afterward. Our network was trained over 4 epochs.
+We used Google's pre-trained BERT NLP model with a fully connected layer with softmax afterward for binary classification. BERT utilizes bidirectional transformer application with masked language modeling to better process sentence structure and flow. The base BERT model consists of 12 tranformer layers with hidden size of 768. Our network was trained over 4 epochs with a learning rate of 2e-5.
 
 # Experiments/evaluation 
 - how are you evaluating your results
 
-Cross Entropy Loss on predictors
+We used cross entropy loss on predictors to determine our loss at each batch/epoch and a binary logits calcualtion for validation/test accuracy. 
+
 # Results 
 - How well did you do
 
-Inconclusive
+We cahieved 88% test accuracy on trained model. This is significant given the poor quality of data that was trained on and shows how well the model can adapt to such. 
+
 # Examples 
 - images/text/live demo, anything to show off your work
+
+<graphs?>
+
 # Video 
 - a 2-3 minute long video where you explain your project and the above information
