@@ -5,8 +5,9 @@ Ryan Whitaker, Tadeusz Pforte
 # Abstract
 - in a paragraph or two, summarize the project
 
+We are trying to see if we can train a model to predict if a Reddit post will be successful (ie. have a large karma score) by training our model on the title text, subreddit, time posted, and karma of posts across the prior "default" subreddits. In order to do so we wanted a binary classifier to assign a label of successful or unsuccessful to text titles. Using a pre-trained NLP model with a fully connected layer, we trained the network on a dataset of Reddit posts from default subreddit communities from the past year obtained via Reddit PushShift.
 
-We are trying to see if we can train a model to predict if a Reddit post will be successful (ie. have a large karma score) by training our model on the title text, subreddit, time posted, and karma of posts across the prior "default" subreddits. 
+<Model Resultas>
 
 # Problem statement 
 - what are you trying to solve/do
@@ -16,7 +17,7 @@ We are trying to see if we can train a model to predict if a Reddit post will be
 # Related work 
 - what papers/ideas inspired you, what datasets did you use, etc
 
-We were inspired from the work in homework 2 using RNNs to train our model on a corpus and generate text. We wanted to see if it would be possible to analyze Reddit posts rather than a standard corpus. We used the Reddit PushShift archive which contains an archive of all Reddit posts in order to bypass the Reddit API restrictions for collecting large datasets. We used Google's pre-trained BERT model which is a masked language model using next sentence prediction in order to have an english language basis for analyzing post text. 
+We were inspired from the work in homework 2 using RNNs to train our model on a corpus and generate text. We wanted to see if it would be possible to analyze Reddit posts rather than a standard corpus as well as apply some form of linear/binary predictor. We used the Reddit PushShift archive which contains an archive of all Reddit posts in order to bypass the Reddit API restrictions for collecting large datasets. We used Google's pre-trained BERT model which is a masked language model using next sentence prediction in order to have an english language basis for analyzing post text. 
 
 # Methodology 
 - what is your approach/solution/what did you do?
@@ -99,8 +100,12 @@ We used Google's pre-trained BERT NLP model and applied a fully connected layer 
 
 # Experiments/evaluation 
 - how are you evaluating your results
+
+Cross Entropy Loss on predictors
 # Results 
 - How well did you do
+
+Inconclusive
 # Examples 
 - images/text/live demo, anything to show off your work
 # Video 
