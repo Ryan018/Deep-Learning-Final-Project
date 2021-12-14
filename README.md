@@ -11,7 +11,7 @@ We are trying to see if we can train a model to predict if a Reddit post will be
 # Problem statement 
 - what are you trying to solve/do
 
-We are trying to see if we can train a model to predict if a Reddit post will be successful (ie. have a large karma score).
+We are trying to see if we can train a model to predict if a Reddit post will be successful where success is measured as having a karma score greater than 100.
 
 # Related work 
 - what papers/ideas inspired you, what datasets did you use, etc
@@ -21,7 +21,7 @@ We were inspired from the work in homework 2 using RNNs to train our model on a 
 # Methodology 
 - what is your approach/solution/what did you do?
 
-To meet our problem statement we wanted to use data that contained both successful and unsuccessful Reddit posts which meant that taking data from r/all or r/popular would not work as those contain only the popular/hot posts at the time. We instead opted to pull data from the prior default subreddits which would then contain both sucessfull and unsuccesful posts. Although default subreddits are no longer a Reddit feature currently, the most previous defauls were 
+To meet our problem statement we wanted to use data that contained both successful and unsuccessful Reddit posts which meant that taking data from r/all or r/popular would not work as those contain only the popular/hot posts at the time. We instead opted to pull data from the prior default subreddits which would then contain both sucessfull and unsuccesful posts. Although default subreddits are no longer a Reddit feature currently, the most previous defauls were:
 
 <table>
     <tr>
@@ -56,12 +56,12 @@ To meet our problem statement we wanted to use data that contained both successf
       <td>sports</td>
       <td>DIY</td>
       <td>Showerthoughts</td>
-      <td>space"</td>
+      <td>space</td>
       <td>Jokes</td>
     </tr>
     <tr>
       <td>tifu</td>
-      <td>"food</td>
+      <td>food</td>
       <td>photoshopbattles</td>
       <td>Art</td>
       <td>InternetIsBeautiful</td>
@@ -89,6 +89,9 @@ To meet our problem statement we wanted to use data that contained both successf
   </table>
 
 Using the Reddit PushShift archive, we downloaded data from the previous year across these default subreddits with posts of score (karma) greater than 10. This was to filter out spam posts yet keep ones that did poorly for purpose of training. This data however was not complete and was missing many posts upon closer inspection due to PushShift's API being partially down however, we still were able to download 173,627 posts with only 2 posts containing null data that were then filtered out. From the post metadata we decided to filter out only the title text, score (karma), subreddit, and post time to obtain the most relevant features for our question and reduce the file size dramatically. 
+
+Originally we wanted to create a model that was able to predict an exact karma score for a given Reddit post as a regression task however, this proved to be extremely innacurate upon first attempts and our problem statement seemed suited better for a classification task of assigning a successfull/unsuccessful label. 
+
 
 Network Architecture: 
 
