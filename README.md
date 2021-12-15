@@ -6,7 +6,7 @@ Ryan Whitaker, Tadeusz Pforte
 # Abstract
 - in a paragraph or two, summarize the project
 
-We are trying to see if we can train a model to predict if a Reddit post will be successful (ie. have a large karma score) by training our model on the title text and karma of posts across the prior "default" subreddits. In order to do so we wanted a binary classifier to assign a label of successful or unsuccessful to text titles. Using a pre-trained NLP model with a fully connected layer for binary classification, we trained the network on a dataset of Reddit posts from default subreddit communities from 2020 obtained via Reddit PushShift.
+We are trying to see if we can train a model to predict if a Reddit post will be successful (ie. have a large karma score) by training our model on the title text and karma of posts across the prior "default" subreddits. In order to do so we wanted to assign a label of karma range to text titles looking like <100 or >1,000. Using a pre-trained NLP model with a fully connected layer for binary classification, we trained the network on a dataset of Reddit posts from default subreddit communities from 2020 obtained via Reddit PushShift.
 
 We found our original idea of predicting a karma score for given Reddit posts was too challenging/ambitious and our data was hard to train on given the variable nature of Reddit posts across several subreddits. We refined our question to allow for a binary classification problem in which our model was able to trainn to 88% accuracy which is significant for the limitations of the data. Our data was also very large and the model took a long time to train so in order to speed up the process we used a buffer such that we were only using <20% of the total post data (x thousand posts).
 
