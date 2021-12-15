@@ -96,7 +96,7 @@ Originally we wanted to create a model that was able to predict an exact karma s
 
 Network Architecture: 
 
-We used Google's pre-trained BERT NLP model with a fully connected layer with softmax afterward for binary classification. BERT utilizes bidirectional transformer application with masked language modeling to better process sentence structure and flow. The base BERT model consists of 12 tranformer layers with hidden size of 768. Our network was trained over 4 epochs with a learning rate of 2e-5.
+We used Google's pre-trained BERT NLP model with a fully connected layer with softmax afterward for binary classification. BERT utilizes bidirectional transformer application with masked language modeling to better process sentence structure and flow. The base BERT model consists of 12 tranformer layers with hidden size of 768. Our final network was trained over 4 epochs with a learning rate of 5e-5 and 2 more with a learning rate 1e-5 for a total of 6 epochs.
 
 # Experiments/evaluation 
 - how are you evaluating your results
