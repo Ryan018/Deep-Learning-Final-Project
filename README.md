@@ -107,13 +107,23 @@ One of our models trained was a binary classifier with two classes of <100 and >
 
 Another model we trained was a multiclass classifier that predicted posts to be within 5 classes of <100, <1,000, <10,000, <100,000, >=100,000. This model trained on 10% of the data across 4 epochs with a learning rate of 5e-5. This model more accurately invisioned our goal of replicating a karma predictor by having bins of log scale to classify posts.
 
+To save time, both of the above models were trained simultaineously on different colab accounts to allow us to gather more models and testing in the same amount of time. As a result, our results for these models will look similar.
+
 # Results 
 - How well did you do
+
+Our binary classifier achieved a final test accuracy of 84%. The F1 scores calculated were 0.93, 0.023. The graphs for these reuslts can be found below un Examples. Our accuracy decreased over time as the loss increased which tells us that this model was overfitting to the data. Our results show that our model was essentially predicting zero for all posts regardless. This is due to the skewed classifications in the data for which the majority of posts scored under 100 karma.
 
 On our 5 classifier model, we achieved a final test accuracy of 83% with intermediate epoch accuracies of 87.4%, 86%, 83.7%, 84.7%. Our loss steadily decreased which showed us that our model was picking up on the data and demonstrated the power of the BERT model. You can see our loss and accuracy results in the figures below within Examples. The calculated F1 scores were 0.93, 0.014, 0.0, 0.0, 0.0. These results show us that our model was overtraining and in the end essentially predicted 0 every time. This could be due to the data having skewed classifications for which 87% of the data was class 1, with lower and lower percentages for the other 4 classes as rates of higher scoring posts drop off. As there was very little data of higher classes, it did not make sense for the model to give them importance.
 
 # Examples 
 - images/text/live demo, anything to show off your work
+
+Binary Classification Model Results: 
+
+![binary class results step loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/binary_steploss.png)
+![binary class results epoch loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/binary_epochloss.png)
+![binary class results accuracy](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/binary_epochacc.png)
 
 5 Class Multiclassification Model Results: 
 
