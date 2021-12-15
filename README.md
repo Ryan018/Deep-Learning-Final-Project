@@ -111,7 +111,9 @@ We cahieved 88% test accuracy on trained model. This is significant given the po
 # Examples 
 - images/text/live demo, anything to show off your work
 
-![5 class results step loss][https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/step%20loss.png]
+![5 class results step loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/step%20loss.png)
+![5 class results val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/step%20val%20loss.png)
+![5 class results val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/accuracy.png)
 
 # Video 
 - a 2-3 minute long video where you explain your project and the above information
