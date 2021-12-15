@@ -148,4 +148,4 @@ Binary Classification Model Results:
 # Video 
 - a 2-3 minute long video where you explain your project and the above information
 
-![Final Project Video](https://youtu.be/L1LuH_1GOMU)
+[Final Project Video](https://youtu.be/L1LuH_1GOMU)
