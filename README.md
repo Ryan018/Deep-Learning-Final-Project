@@ -111,7 +111,7 @@ We cahieved 88% test accuracy on trained model. This is significant given the po
 # Examples 
 - images/text/live demo, anything to show off your work
 
-<graphs?>
+![5 class results step loss][step loss.png]
 
 # Video 
 - a 2-3 minute long video where you explain your project and the above information
