@@ -8,17 +8,17 @@ Ryan Whitaker, Tadeusz Pforte
 
 We are trying to see if we can train a model to predict if a Reddit post will be successful (ie. have a large karma score) by training our model on the title text and karma of posts across the prior "default" subreddits. In order to do so we wanted to assign a label of karma range to text titles looking like <100 or >1,000. Using a pre-trained NLP model with a fully connected layer for binary classification, we trained the network on a dataset of Reddit posts from default subreddit communities from 2020 obtained via Reddit PushShift.
 
-We found our original idea of predicting a karma score for given Reddit posts was too challenging/ambitious and our data was hard to train on given the variable nature of Reddit posts across several subreddits. We refined our question to allow for a binary classification problem in which our model was able to trainn to 88% accuracy which is significant for the limitations of the data. Our data was also very large and the model took a long time to train so in order to speed up the process we used a buffer such that we were only using <20% of the total post data (x thousand posts).
+We found our original idea of predicting a karma score for given Reddit posts as a regression task was too challenging/ambitious and our data was hard to train on given the variable nature of Reddit posts across several subreddits. We pivtoed and refined our question to allow for classification problems whereby we tried several models that were able to train to >80% accuracy which is significant for the limitations of the data. Our data was also very large and the model took a long time to train so in order to speed up the process we used a buffer such that we were only using <20% of the total post data (in the order of tens of thousands posts).
 
 # Problem statement 
 - what are you trying to solve/do
 
-We are trying to see if we can train a model to predict if a Reddit post will be successful where success is measured as having a karma score greater than 100.
+We are trying to see if we can train a model to predict if a Reddit post will be successful where success is measured as having a karma score greater than some threshold x.
 
 # Related work 
 - what papers/ideas inspired you, what datasets did you use, etc
 
-We were inspired from the work in homework 2 using RNNs to train our model on a corpus and generate text. We wanted to see if it would be possible to analyze Reddit posts rather than a standard corpus as well as apply some form of linear/binary predictor. We used the Reddit PushShift archive which contains an archive of all Reddit posts in order to bypass the Reddit API restrictions for collecting large datasets. We used Google's pre-trained BERT model which is a masked language model using next sentence prediction in order to have an english language basis for further training on post text. 
+We were inspired from the work in homework 2 using RNNs to train our model on a corpus and generate text. We wanted to see if it would be possible to analyze Reddit posts rather than a standard corpus as well as apply some form of linear/binary predictor. We used the Reddit PushShift archive which contains an archive of all Reddit posts in order to bypass the Reddit API restrictions for collecting large datasets. We used Google's pre-trained BERT model which is a masked language model using next sentence prediction in order to have an english language basis for further training on post text. We found other people online successfully used BERT as a base for classification tasks with (we suspect) stronger correlations than our data.
 
 # Methodology 
 - what is your approach/solution/what did you do?
