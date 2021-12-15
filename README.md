@@ -103,14 +103,18 @@ We used Google's pre-trained BERT NLP model with a fully connected layer with so
 
 We used cross entropy loss on predictors to determine our loss at each batch/epoch and a binary logits calcualtion for validation/test accuracy. We additionally calculated F1 scores for our classifications.
 
-One of our models trained was a binary classifier with two classes of <100 and >=100. This mopdel was trained for 4 epoch with a learning rate of 5e-5. This model was designed to check if we could run a binary classification instead of a more complicated regression problem.
+One of our models trained was a binary classifier with two classes of <100 and >=100. This mopdel was trained on 20% of the data for 4 epochs with a learning rate of 5e-5. This model was designed to check if we could run a binary classification instead of a more complicated regression problem.
 
 Another model we trained was a multiclass classifier that predicted posts to be within 5 classes of <100, <1,000, <10,000, <100,000, >=100,000. This model trained on 10% of the data across 4 epochs with a learning rate of 5e-5. This model more accurately invisioned our goal of replicating a karma predictor by having bins of log scale to classify posts.
 
 To save time, both of the above models were trained simultaineously on different colab accounts to allow us to gather more models and testing in the same amount of time. As a result, our results for these models will look similar.
 
+A third model we trained was another multiclass classifier that predicts posts to be within 3 classes of <=100, >100, >1000. This model trained on a new, balanced dataset where each class has an equal number of datapoints to train on. The model was trained for 4 epochs with a learning rate of 5e-5. This new data distribution was made in order to better balance the model and prevent it from guessing 0 for each class without actually learning the higher order data.
+
 # Results 
 - How well did you do
+
+(Disclaimer: The first two model results were trained concurently)
 
 Our binary classifier achieved a final test accuracy of 84%. The F1 scores calculated were 0.93, 0.023. The graphs for these reuslts can be found below un Examples. Our accuracy decreased over time as the loss increased which tells us that this model was overfitting to the data. Our results show that our model was essentially predicting zero for all posts regardless. This is due to the skewed classifications in the data for which the majority of posts scored under 100 karma.
 
@@ -130,6 +134,8 @@ Binary Classification Model Results:
 ![5 class results step loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/step%20loss.png)
 ![5 class results val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/step%20val%20loss.png)
 ![5 class results val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/accuracy.png)
+
+3 Class Multiclass Model Results: 
 
 # Video 
 - a 2-3 minute long video where you explain your project and the above information
