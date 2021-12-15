@@ -98,14 +98,14 @@ Network Architecture:
 
 We used Google's pre-trained BERT NLP model with a fully connected layer with softmax afterward for binary classification. BERT utilizes bidirectional transformer application with masked language modeling to better process sentence structure and flow. The base BERT model consists of 12 tranformer layers with hidden size of 768. Our network was trained over 4 epochs with a learning rate of 2e-5.
 
-One of our models trained was a multiclass classifier that predicted posts to be within 5 classes of <100, <1,000, <10,000, <100,000, >=100,000. This model trained on 10% of the data across 4 epochs with a learning rate of 5e-5. 
-
-Another model we trained was a binary classifier 
-
 # Experiments/evaluation 
 - how are you evaluating your results
 
 We used cross entropy loss on predictors to determine our loss at each batch/epoch and a binary logits calcualtion for validation/test accuracy. We additionally calculated F1 scores for our classifications.
+
+One of our models trained was a multiclass classifier that predicted posts to be within 5 classes of <100, <1,000, <10,000, <100,000, >=100,000. This model trained on 10% of the data across 4 epochs with a learning rate of 5e-5. 
+
+Another model we trained was a binary classifier 
 
 # Results 
 - How well did you do
