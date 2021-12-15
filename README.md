@@ -103,14 +103,12 @@ We used Google's pre-trained BERT NLP model with a fully connected layer with so
 
 We used cross entropy loss on predictors to determine our loss at each batch/epoch and a binary logits calcualtion for validation/test accuracy. We additionally calculated F1 scores for our classifications.
 
-One of our models trained was a multiclass classifier that predicted posts to be within 5 classes of <100, <1,000, <10,000, <100,000, >=100,000. This model trained on 10% of the data across 4 epochs with a learning rate of 5e-5. 
+One of our models trained was a binary classifier with two classes of <100 and >=100. This mopdel was trained for 4 epoch with a learning rate of 5e-5. This model was designed to check if we could run a binary classification instead of a more complicated regression problem.
 
-Another model we trained was a binary classifier 
+Another model we trained was a multiclass classifier that predicted posts to be within 5 classes of <100, <1,000, <10,000, <100,000, >=100,000. This model trained on 10% of the data across 4 epochs with a learning rate of 5e-5. This model more accurately invisioned our goal of replicating a karma predictor by having bins of log scale to classify posts.
 
 # Results 
 - How well did you do
-
-We cahieved 88% test accuracy on trained model. This is significant given the poor quality of data that was trained on and shows how well the model can adapt to such. 
 
 On our 5 classifier model, we achieved a final test accuracy of 83% with intermediate epoch accuracies of 87.4%, 86%, 83.7%, 84.7%. Our loss steadily decreased which showed us that our model was picking up on the data and demonstrated the power of the BERT model. You can see our loss and accuracy results in the figures below within Examples. The calculated F1 scores were 0.93, 0.014, 0.0, 0.0, 0.0. These results show us that our model was overtraining and in the end essentially predicted 0 every time. This could be due to the data having skewed classifications for which 87% of the data was class 1, with lower and lower percentages for the other 4 classes as rates of higher scoring posts drop off. As there was very little data of higher classes, it did not make sense for the model to give them importance.
 
@@ -118,6 +116,7 @@ On our 5 classifier model, we achieved a final test accuracy of 83% with interme
 - images/text/live demo, anything to show off your work
 
 5 Class Multiclassification Model Results: 
+
 ![5 class results step loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/step%20loss.png)
 ![5 class results val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/step%20val%20loss.png)
 ![5 class results val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/accuracy.png)
