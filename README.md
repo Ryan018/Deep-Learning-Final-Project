@@ -129,21 +129,21 @@ If we were to create a new model or improve, we would wish to include more post 
 
 Binary Classification Model Results: 
 
-![binary class results step loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/binary_steploss.png)
-![binary class results epoch loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/binary_epochloss.png)
-![binary class results accuracy](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/binary_epochacc.png)
+![binary class results step loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/images/binary_steploss.png)
+![binary class results epoch loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/images/binary_epochloss.png)
+![binary class results accuracy](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/images/binary_epochacc.png)
 
 5 Class Multiclassification Model Results: 
 
-![5 class results step loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/step%20loss.png)
-![5 class results val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/step%20val%20loss.png)
-![5 class results val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/accuracy.png)
+![5 class results step loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/images/step%20loss.png)
+![5 class results val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/images/step%20val%20loss.png)
+![5 class results val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/images/accuracy.png)
 
 3 Class Multiclass Model Results: 
 
-![3 Class step loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/final%20step%20loss.png)
-![3 Class val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/final%20val%20loss.png)
-![3 Class results accuracy](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/final%20accuracy.png)
+![3 Class step loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/images/final%20step%20loss.png)
+![3 Class val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/images/final%20val%20loss.png)
+![3 Class results accuracy](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/images/final%20accuracy.png)
 
 # Video 
 - a 2-3 minute long video where you explain your project and the above information
