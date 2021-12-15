@@ -120,6 +120,8 @@ Our binary classifier achieved a final test accuracy of 84%. The F1 scores calcu
 
 On our 5 classifier model, we achieved a final test accuracy of 83% with intermediate epoch accuracies of 87.4%, 86%, 83.7%, 84.7%. Our loss steadily decreased which showed us that our model was picking up on the data and demonstrated the power of the BERT model. You can see our loss and accuracy results in the figures below within Examples. The calculated F1 scores were 0.93, 0.014, 0.0, 0.0, 0.0. These results show us that our model was overfitting and in the end essentially predicted 0 every time. This could be due to the data having skewed classifications for which 87% of the data was class 1, with lower and lower percentages for the other 4 classes as rates of higher scoring posts drop off. As there was very little data of higher classes, it did not make sense for the model to give them importance.
 
+If we were to create a new model or improve, we would wish to include more post data such as subreddit and time posted into our classification as these features play a large role in actual reddit post success. This is important as currently, taking a fairly uniform and proportional spread of posts across default subreddits will lead to great variance in successful title texts from quality to length. We considered our model a success enough to perform better than random chance alone, given the high variability and relatively low quality of the reddit data we have.
+
 # Examples 
 - images/text/live demo, anything to show off your work
 
@@ -136,6 +138,10 @@ Binary Classification Model Results:
 ![5 class results val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/accuracy.png)
 
 3 Class Multiclass Model Results: 
+
+![3 Class step loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/final%20step%20loss.png)
+![3 Class val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/final%20val%20loss.png)
+![3 Class results accuracy](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/final%20accuracy.png)
 
 # Video 
 - a 2-3 minute long video where you explain your project and the above information
