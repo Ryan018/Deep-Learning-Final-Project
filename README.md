@@ -90,7 +90,7 @@ To meet our problem statement we wanted to use data that contained both successf
     </tr>
   </table>
 
-Using the Reddit PushShift archive, we downloaded data from 2020 across these default subreddits with posts of score (karma) greater than 10. This was to filter out spam posts yet keep ones that did poorly for purpose of training. This data however was not complete and was missing many posts upon closer inspection due to PushShift's API being partially down however, we still were able to download 280,509 posts with only 2 posts containing null data that were then filtered out. From the post metadata we decided to filter out only the title text, score (karma), subreddit, and post time to obtain the most relevant features for our question and reduce the file size dramatically. Additionally, we introduced a buffer to reduce the total number of posts to that we were training on ~20% as our dataset was very large and took a long time to train (couple minutes per batch), time which we did not have freely available for testing and further iteration. 
+Using the Reddit PushShift archive, we downloaded data from 2020 across these default subreddits with posts of score (karma) greater than 10. This was to filter out spam posts yet keep ones that did poorly for purpose of training. This data however was not complete and was missing many posts upon closer inspection due to PushShift's API being partially down however, we still were able to download 280,509 posts with only 2 posts containing null data that were then filtered out. From the post metadata we decided to filter out only the title text, score (karma), subreddit, and post time to obtain the most relevant features for our question and reduce the file size dramatically. Additionally, we introduced a buffer to reduce the total number of posts to that we were training on ~<20% as our dataset was very large and took a long time to train (couple minutes per batch), time which we did not have freely available for testing and further iteration. 
 
 Originally we wanted to create a model that was able to predict an exact karma score for a given Reddit post as a regression task however, this proved to be extremely innacurate upon first attempts and our problem statement seemed suited better for a classification task of assigning a successfull/unsuccessful label. 
 
@@ -98,19 +98,26 @@ Network Architecture:
 
 We used Google's pre-trained BERT NLP model with a fully connected layer with softmax afterward for binary classification. BERT utilizes bidirectional transformer application with masked language modeling to better process sentence structure and flow. The base BERT model consists of 12 tranformer layers with hidden size of 768. Our network was trained over 4 epochs with a learning rate of 2e-5.
 
+One of our models trained was a multiclass classifier that predicted posts to be within 5 classes of <100, <1,000, <10,000, <100,000, >=100,000. This model trained on 10% of the data across 4 epochs with a learning rate of 5e-5. 
+
+Another model we trained was a binary classifier 
+
 # Experiments/evaluation 
 - how are you evaluating your results
 
-We used cross entropy loss on predictors to determine our loss at each batch/epoch and a binary logits calcualtion for validation/test accuracy. 
+We used cross entropy loss on predictors to determine our loss at each batch/epoch and a binary logits calcualtion for validation/test accuracy. We additionally calculated F1 scores for our classifications.
 
 # Results 
 - How well did you do
 
 We cahieved 88% test accuracy on trained model. This is significant given the poor quality of data that was trained on and shows how well the model can adapt to such. 
 
+On our 5 classifier model, we achieved a final test accuracy of 83% with intermediate epoch accuracies of 87.4%, 86%, 83.7%, 84.7%. Our loss steadily decreased which showed us that our model was picking up on the data and demonstrated the power of the BERT model. You can see our loss and accuracy results in the figures below within Examples. The calculated F1 scores were 0.93, 0.014, 0.0, 0.0, 0.0. These results show us that our model was overtraining and in the end essentially predicted 0 every time. This could be due to the data having skewed classifications for which 87% of the data was class 1, with lower and lower percentages for the other 4 classes as rates of higher scoring posts drop off. As there was very little data of higher classes, it did not make sense for the model to give them importance.
+
 # Examples 
 - images/text/live demo, anything to show off your work
 
+5 Class Multiclassification Model Results: 
 ![5 class results step loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/step%20loss.png)
 ![5 class results val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/step%20val%20loss.png)
 ![5 class results val loss](https://github.com/Ryan018/Deep-Learning-Final-Project/blob/main/accuracy.png)
