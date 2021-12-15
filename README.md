@@ -109,7 +109,7 @@ Another model we trained was a multiclass classifier that predicted posts to be 
 
 To save time, both of the above models were trained simultaineously on different colab accounts to allow us to gather more models and testing in the same amount of time. As a result, our results for these models will look similar.
 
-A third model we trained was another multiclass classifier that predicts posts to be within 3 classes of <=100, >100, >1000. This model trained on a new, balanced dataset where each class has an equal number of datapoints to train on. The model was trained for 4 epochs with a learning rate of 5e-5. This new data distribution was made in order to better balance the model and prevent it from guessing 0 for each class without actually learning the higher order data.
+A third model we trained was another multiclass classifier that predicts posts to be within 3 classes of <=100, >100, >1000. This model trained on a new, balanced dataset where each class has an equal number of datapoints to train on. The model was trained for 4 epochs with a learning rate of 5e-5, and 2 more with a learning rate of 1e-5. This new data distribution was made in order to better balance the model and prevent it from guessing 0 for each class without actually learning the higher order data. The extra epochs were added to fine tune the model and check for improvement once it had converged on the larger learning rate.
 
 # Results 
 - How well did you do
